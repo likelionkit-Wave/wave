@@ -1,0 +1,235 @@
+.WaveContainer {
+  display: flex;
+  overflow-x: auto;
+  height: 100%;
+  margin: auto;
+  max-width: 365px;
+}
+
+.Wave {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  font-size: 40px;
+}
+
+.waveImg {
+  position: relative;
+  background-image: url(../../../public/img/wave\ 기본.png);
+  background-size: 100% 100%;
+  height: 80vh;
+  background-repeat: no-repeat; /*이미지 반복 방지 */
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tubeImg {
+  position: absolute;
+  width: 40px;
+  height: auto;
+  left: 30%;
+  top: 75%;
+}
+
+.dolImg {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  left: 7%;
+  top: -30px;
+  transform: rotate(15deg); /* 각도 */
+}
+
+.boatImg {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  left: 70%;
+  top: -40px;
+  transform: rotate(330deg); /* 각도 */
+}
+
+.leftBtn {
+  position: absolute;
+  top: 40%;
+  left: 1%;
+  border: none;
+  background-color: transparent;
+}
+
+.leftBtn::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid #000;
+  border-right: 5px solid #000;
+  transform: rotate(225deg); /* 각도 */
+}
+
+.leftBtn:hover {
+  cursor: pointer;
+}
+
+.rightBtn {
+  position: absolute;
+  top: 40%;
+  right: 7%;
+  border: none;
+  background-color: transparent;
+}
+
+.rightBtn::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid #000;
+  border-right: 5px solid #000;
+  transform: rotate(45deg); /* 각도 */
+}
+
+.rightBtn:hover {
+  cursor: pointer;
+}
+
+.Letter {
+  height: 65vh;
+}
+
+.shareBtn {
+  background-color: #2d8598;
+  border-radius: 30px;
+  width: 250px;
+  height: 50px;
+  font-size: 25px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.shareBtn:active {
+  background-color: #1c5b69;
+  transition: background-color 0s; /* 눌린 상태에서의 전환 시간을 0으로 설정 */
+}
+
+.Share img {
+  margin-right: 25px;
+  width: 30px;
+  height: auto;
+}
+
+.urlPage {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 15vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d8598;
+  border-radius: 30px;
+  color: white;
+  border: none;
+}
+
+.url {
+  font-size: 20px;
+}
+
+.urlBtn {
+  margin-top: 2vh;
+  display: flex;
+}
+
+.copyBtn {
+  background-color: white;
+  border-radius: 30px;
+  width: 120px;
+  height: 4vh;
+  font-size: 15px;
+  color: black;
+  margin-right: 0.5vw;
+}
+
+.backBtn {
+  background-color: white;
+  border-radius: 30px;
+  width: 120px;
+  height: 4vh;
+  font-size: 15px;
+  color: black;
+  margin-left: 0.5vw;
+}
+
+.bottleLetter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  width: 365px;
+  height: 15vh;
+}
+
+.letterImg {
+  margin-right: 1vw;
+}
+
+.letterImg :hover {
+  cursor: pointer;
+}
+
+.letterImg img {
+  width: 90px;
+  height: auto;
+}
+
+.letterInfo {
+  background-image: url(../../../public/img/messagebox.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 100px;
+}
+
+.letterInfo div {
+  margin-left: 45px;
+}
+
+.letterName {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.letterDate {
+  font-size: 15px;
+}
+
+.letterInfo2 {
+  background-image: url(../../../public/img/messagebox2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 100px;
+}
+
+.letterInfo2 div {
+  margin-left: 20px;
+}
