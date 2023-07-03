@@ -1,0 +1,148 @@
+.writeContainer {
+  background: linear-gradient(to right top, #81c9fe, #d1ecf2);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.writeHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  color: #11515f;
+}
+
+.writeHeader > p:first-child {
+  font-weight: 900;
+  font-size: 1.8em;
+  margin-right: 10px;
+}
+
+.writeHeader > p:last-child {
+  font-size: 1.5em;
+}
+
+.letter {
+  background-color: #fdfaf5;
+  height: 65vh;
+  width: 100%;
+  border-radius: 20px;
+  padding: 50px 10px 80px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 1px 5px 8px 3px rgba(0, 0, 0, 0.161);
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #b1afab;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.title {
+  border: none;
+  background-color: transparent;
+  font-size: 23px;
+  text-align: center;
+  color: #9d9588;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.title:focus,
+.writer > input:focus {
+  outline: none;
+}
+
+.title::placeholder {
+  color: #9d95888f;
+  font-weight: 800;
+}
+
+.note {
+  background-attachment: local;
+  background-image: linear-gradient(to right, #fdfaf5 30px, transparent 10px),
+    linear-gradient(to left, #fdfaf5 25px, transparent 10px),
+    repeating-linear-gradient(
+      #fdfaf5,
+      #fdfaf5 35px,
+      #ccc 35px,
+      #ccc 36px,
+      #fdfaf5 36px
+    );
+  line-height: 35px;
+  padding: 10px 35px;
+  border: none;
+  resize: none;
+  height: 90%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: #9d9588;
+}
+
+.note:focus {
+  outline: none;
+}
+
+.limit {
+  position: absolute;
+  right: 40px;
+  bottom: 45px;
+  color: #cfc7bb;
+}
+
+.writer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 35px;
+  bottom: 10px;
+}
+
+.writer > p {
+  color: #9d9588;
+}
+
+.writer > input {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  color: #9d9588;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 20px;
+  width: 80px;
+}
+
+.writer > input::placeholder {
+  color: #9b93879c;
+}
+
+.notice {
+  color: #00000070;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.submitBtn {
+  color: white;
+  font-size: 1.5em;
+  background-color: #4377fd;
+  border: none;
+  padding: 20px 30px;
+  width: 90%;
+  border-radius: 40px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
