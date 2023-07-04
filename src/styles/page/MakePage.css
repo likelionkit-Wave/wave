@@ -1,0 +1,98 @@
+.makeBg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("../../../public/img/foams.png"),
+    linear-gradient(to top right, rgb(129, 201, 254), rgb(209, 236, 242));
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.makeContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15%;
+  max-width: 390px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 15vmin 8vmin;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.makeContainer > .header {
+  color: rgb(17, 81, 95);
+  font-size: 1.8rem;
+}
+
+.makeContainer > .header > .titleMessage {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.makeContainer > .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.makeContainer > .content > .actionIcon {
+  height: 30vh;
+}
+
+.makeContainer > .content > .inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 70%;
+  color: rgb(17, 81, 95);
+  font-size: 1rem;
+}
+
+.makeContainer > .content > .inputContainer > .inputField {
+  width: 100%;
+  padding-bottom: 0.25em;
+  text-align: center;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(17, 81, 95);
+  color: inherit;
+  font-size: 1.75rem;
+}
+
+.makeContainer > .content > .inputContainer > .inputField::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+.makeContainer > .content > .makeBtn {
+  width: max-content;
+  padding: 0.5em 1em;
+  font-size: 1.6rem;
+  background-color: rgb(45, 133, 152);
+  border: none;
+  border-radius: 9999px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.makeContainer > .content > .makeBtn:hover {
+  background-color: rgb(42, 111, 126);
+}
+
+.makeContainer > .content > .makeBtn:active {
+  background-color: rgb(34, 88, 101);
+}
+
+.makeContainer > .content > .makeBtn::before {
+  content: "➜";
+  margin-right: 1em;
+}
