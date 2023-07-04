@@ -1,5 +1,7 @@
 import React from "react";
+import "../../styles/components/wave/WaveCp.css";
 
+//편지 + 편지 설명
 const Wavecp = ({ index, name, content, date }) => {
   return (
     <div>

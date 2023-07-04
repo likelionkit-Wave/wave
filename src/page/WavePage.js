@@ -1,12 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "../styles/page/WavePage.css";
 import WaveCp from "../components/wave/WaveCp.js";
+import { CopyToClipboard } from "react-copy-to-clipboard/src";
 
 //(주인이름, url) and List = (보낸이, 편지글, 날짜)
 const WavePage = ({ List }) => {
   const [showUrl, setShowUrl] = useState(false);
-  const scrollContainerRef = useRef(null);
+  const [translateX, setTranslateX] = useState(0);
 
+  //url 페이지
   const openUrl = () => {
     setShowUrl(true);
   };
@@ -15,34 +17,24 @@ const WavePage = ({ List }) => {
     setShowUrl(false);
   };
 
-  //모바일 지원 X => 다른 방법 or 사용자가 직접 복사
+  //url 복사
   const copyUrl = () => {
-    const url = "aa"; //url 작성
-    navigator.clipboard.writeText(url);
-    alert("복사 되었습니다");
+    alert("클립보드에 복사되었습니다.");
   };
 
   const pageCount = Math.ceil(List.length / 3); //생성할 페이지 수
 
-  //페이지 오른쪽 왼쪽 이동
+  //이동 버튼 동작
   const moveRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        top: 0,
-        left: 365,
-        behavior: "smooth",
-      });
-    }
+    translateX == (pageCount - 1) * -365
+      ? setTranslateX((prevTranslateX) => prevTranslateX)
+      : setTranslateX((prevTranslateX) => prevTranslateX - 365);
   };
 
   const moveLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        top: 0,
-        left: -365,
-        behavior: "smooth",
-      });
-    }
+    translateX == 0
+      ? setTranslateX((prevTranslateX) => prevTranslateX)
+      : setTranslateX((prevTranslateX) => prevTranslateX + 365);
   };
 
   //페이지 생성
@@ -71,7 +63,10 @@ const WavePage = ({ List }) => {
             <img src="/img/dol.png" className="dolImg" alt="돌고래"></img>
             <img src="/img/boat.png" className="boatImg" alt="보트"></img>
             <img src="/img/tube.png" className="tubeImg" alt="튜브"></img>
-            <div className="Letter">
+            <div
+              className="Letter"
+              style={{ transform: `translateX(${translateX}px)` }}
+            >
               <button onClick={moveLeft} className="leftBtn"></button>
               {/* 편지 띄우기 */}
               {pageItems}
@@ -86,9 +81,13 @@ const WavePage = ({ List }) => {
                 <div className="urlPage">
                   <div className="url">생성한 URL 주소</div>
                   <div className="urlBtn">
-                    <button className="copyBtn" onClick={copyUrl}>
-                      복사하기
-                    </button>
+                    <CopyToClipboard
+                      text="aaa" //url 작성
+                    >
+                      <button className="copyBtn" onClick={copyUrl}>
+                        복사하기
+                      </button>
+                    </CopyToClipboard>
                     <button className="backBtn" onClick={closeUrl}>
                       뒤로가기
                     </button>
@@ -105,11 +104,7 @@ const WavePage = ({ List }) => {
   };
 
   return (
-    <div
-      className="WaveContainer"
-      style={{ width: `${100 * pageCount}%` }}
-      ref={scrollContainerRef}
-    >
+    <div className="WaveContainer" style={{ width: `${100 * pageCount}%` }}>
       {addPage()}
     </div>
   );
