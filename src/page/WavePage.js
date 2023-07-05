@@ -26,15 +26,15 @@ const WavePage = ({ List }) => {
 
   //이동 버튼 동작
   const moveRight = () => {
-    translateX == (pageCount - 1) * -365
+    translateX == (pageCount - 1) * -390
       ? setTranslateX((prevTranslateX) => prevTranslateX)
-      : setTranslateX((prevTranslateX) => prevTranslateX - 365);
+      : setTranslateX((prevTranslateX) => prevTranslateX - 390);
   };
 
   const moveLeft = () => {
     translateX == 0
       ? setTranslateX((prevTranslateX) => prevTranslateX)
-      : setTranslateX((prevTranslateX) => prevTranslateX + 365);
+      : setTranslateX((prevTranslateX) => prevTranslateX + 390);
   };
 
   //페이지 생성
