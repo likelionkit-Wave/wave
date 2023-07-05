@@ -5,6 +5,7 @@ import MakePage from "./page/MakePage";
 import WritePage from "./page/WritePage";
 import ReadPage from "./page/ReadPage";
 import WavePage from "./page/WavePage";
+import VisitPage from "./page/VisitPage";
 import { useState } from "react";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/writewave" element={<WritePage />}></Route>
         <Route path="/readwave" element={<ReadPage />}></Route>
         <Route path="/wave" element={<WavePage List={data} />}></Route>
+        <Route path="/visit" element={<VisitPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
