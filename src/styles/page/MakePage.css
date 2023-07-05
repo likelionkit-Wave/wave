@@ -72,6 +72,16 @@
   opacity: 0.5;
 }
 
+.makeContainer > .content > .inputContainer > p {
+  margin: 0;
+}
+
+.makeContainer > .content > .inputContainer > p > .limitIndicator {
+  margin-left: 1em;
+  font-size: smaller;
+  opacity: 0.5;
+}
+
 .makeContainer > .content > .createBtn {
   width: max-content;
   padding: 0.5em 1em;
