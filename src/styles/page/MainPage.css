@@ -67,9 +67,13 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
 
 .mainContainer > .content > .buttonGroup > .mainBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   padding: 0.5em 1em;
   font-size: 1.2rem;
@@ -96,9 +100,8 @@
   filter: brightness(60%);
 }
 
-.mainContainer > .content > .buttonGroup > .mainBtn::before {
-  content: "➜";
-  margin-right: 1em;
+.mainContainer > .content > .buttonGroup > .mainBtn > .socialLogo {
+  height: 1em;
 }
 
 .mainContainer > .content > .textContainer {
