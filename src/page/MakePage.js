@@ -24,8 +24,12 @@ const MakePage = () => {
               placeholder="누군가"
               defaultValue={mailbox}
               onChange={(e) => setMailbox(e.target.value)}
+              maxLength="10"
             ></input>
-            <span>의 바다</span>
+            <p>
+              의 바다
+              <span className="limitIndicator">{10 - mailbox.length}자</span>
+            </p>
           </div>
           <button className="createBtn">만들기</button>
         </div>
