@@ -39,7 +39,7 @@ function App() {
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/makewave" element={<MakePage />}></Route>
         <Route path="/writewave" element={<WritePage />}></Route>
-        <Route path="/readwave/:id" element={<ReadPage List={data} />}></Route>
+        <Route path="/readwave" element={<ReadPage />}></Route>
         <Route path="/wave" element={<WavePage List={data} />}></Route>
         <Route path="/visit" element={<VisitPage />}></Route>
       </Routes>
