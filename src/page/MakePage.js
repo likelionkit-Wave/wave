@@ -27,7 +27,7 @@ const MakePage = () => {
             ></input>
             <span>의 바다</span>
           </div>
-          <button className="makeBtn">만들기</button>
+          <button className="createBtn">만들기</button>
         </div>
       </div>
     </div>
