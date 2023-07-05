@@ -72,7 +72,7 @@
   opacity: 0.5;
 }
 
-.makeContainer > .content > .makeBtn {
+.makeContainer > .content > .createBtn {
   width: max-content;
   padding: 0.5em 1em;
   font-size: 1.6rem;
@@ -84,15 +84,15 @@
   transition: background-color 0.1s;
 }
 
-.makeContainer > .content > .makeBtn:hover {
+.makeContainer > .content > .createBtn:hover {
   background-color: rgb(42, 111, 126);
 }
 
-.makeContainer > .content > .makeBtn:active {
+.makeContainer > .content > .createBtn:active {
   background-color: rgb(34, 88, 101);
 }
 
-.makeContainer > .content > .makeBtn::before {
+.makeContainer > .content > .createBtn::before {
   content: "➜";
   margin-right: 1em;
 }
