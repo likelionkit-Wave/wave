@@ -13,22 +13,26 @@ function App() {
   const [data, setData] = useState([
     {
       name: "AAA",
-      content: "Test1",
+      title: "Test1",
+      content: "Test1입니다.",
       date: "2023-06-30",
     },
     {
       name: "BBB",
-      content: "Test2",
+      title: "Test2",
+      content: "Test2입니다.",
       date: "2023-06-31",
     },
     {
       name: "CCC",
-      content: "Test3",
+      title: "Test3",
+      content: "Test3입니다.",
       date: "2023-06-31",
     },
     {
       name: "DDD",
-      content: "Test4",
+      title: "Test4",
+      content: "Test4입니다.",
       date: "2023-06-31",
     },
   ]);
@@ -39,7 +43,7 @@ function App() {
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/makewave" element={<MakePage />}></Route>
         <Route path="/writewave" element={<WritePage />}></Route>
-        <Route path="/readwave" element={<ReadPage />}></Route>
+        <Route path="/readwave/:id" element={<ReadPage List={data} />}></Route>
         <Route path="/wave" element={<WavePage List={data} />}></Route>
         <Route path="/visit" element={<VisitPage />}></Route>
       </Routes>
