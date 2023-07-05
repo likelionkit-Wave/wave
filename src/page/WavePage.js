@@ -51,6 +51,7 @@ const WavePage = ({ List }) => {
           name={e.name}
           content={e.content}
           date={e.date}
+          title={e.title}
         />
       ));
 

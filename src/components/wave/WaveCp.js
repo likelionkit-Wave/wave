@@ -3,7 +3,7 @@ import "../../styles/components/wave/WaveCp.css";
 import { useNavigate } from "react-router-dom";
 
 //편지 + 편지 설명
-const Wavecp = ({ index, name, content, date }) => {
+const Wavecp = ({ index, name, content, date, title }) => {
   const navigate = useNavigate();
 
   return (
