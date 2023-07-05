@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../styles/page/ReadPage.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ReadPage = ({ List }) => {
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [member, setMember] = useState({
@@ -19,7 +20,14 @@ const ReadPage = ({ List }) => {
       </span>
       <div className="background">
         <div className="readLetter">
-          <span className="close">✕</span>
+          <span
+            onClick={() => {
+              navigate(-1);
+            }}
+            className="close"
+          >
+            ✕
+          </span>
           <p className="readCreateDate">{letter.date}</p>
           <p className="title">{letter.title}</p>
           <textarea readOnly className="note" value={letter.content}></textarea>
