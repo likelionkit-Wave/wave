@@ -1,8 +1,11 @@
 import React from "react";
 import "../../styles/components/wave/WaveCp.css";
+import { useNavigate } from "react-router-dom";
 
 //편지 + 편지 설명
 const Wavecp = ({ index, name, content, date }) => {
+  const navigate = useNavigate();
+
   return (
     <div>
       {index % 3 == 1 ? (
@@ -16,7 +19,7 @@ const Wavecp = ({ index, name, content, date }) => {
             <img
               src="/img/letter.png"
               onClick={() => {
-                window.location.href = "";
+                navigate(`/readwave/${index}`);
               }}
               alt="병"
             />
@@ -28,7 +31,7 @@ const Wavecp = ({ index, name, content, date }) => {
             <img
               src="/img/letter.png"
               onClick={() => {
-                window.location.href = "";
+                navigate(`/readwave/${index}`);
               }}
               alt="병"
             />
