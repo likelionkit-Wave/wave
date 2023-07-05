@@ -14,13 +14,14 @@ const MainPage = () => {
         <div className="content">
           <img className="logoIcon" src="" alt="로고"></img>
           <div className="buttonGroup">
-            <button className="mainBtn kakao">
-              <img className="socialLogo" src="/img/kakaotalk.svg"></img>
-              카카오톡으로 로그인
-            </button>
+            <p>다음 계정으로 로그인</p>
             <button className="mainBtn google">
               <img className="socialLogo" src="/img/google.svg"></img>Google로
               로그인
+            </button>
+            <button className="mainBtn kakao" disabled>
+              <img className="socialLogo" src="/img/kakao.svg"></img>
+              카카오 로그인
             </button>
           </div>
           <div className="textContainer">
