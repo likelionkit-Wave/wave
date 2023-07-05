@@ -1,0 +1,121 @@
+﻿.VisitContainer {
+  height: 100%;
+  margin: auto;
+  max-width: 365px;
+  background: linear-gradient(
+    to top right,
+    rgb(129, 201, 254),
+    rgb(209, 236, 242)
+  );
+}
+
+.visit {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0px auto;
+}
+
+.Name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  font-size: 25px;
+}
+
+.visitImg {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  align-items: center;
+}
+
+.larusImg {
+  background-image: url("../../../public/img/foams.png");
+  background-size: 100% 70%;
+  height: 30vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Larus {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: auto;
+}
+
+.writeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+}
+
+.writeBtn button {
+  background-color: #4382fd;
+  border-radius: 30px;
+  width: 220px;
+  height: 60px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.writeBtn button:active {
+  background-color: #115df6;
+  transition: background-color 0s; /* 눌린 상태에서의 전환 시간을 0으로 설정 */
+}
+
+.writeBtn img {
+  width: 25px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.message {
+  width: 220px;
+  height: 20vh;
+  color: rgb(152, 152, 152);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.makeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+}
+
+.makeBtn button {
+  background-color: #2d8598;
+  border-radius: 30px;
+  width: 180px;
+  height: 50px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.makeBtn button:active {
+  background-color: #1c5b69;
+  transition: background-color 0s; /* 눌린 상태에서의 전환 시간을 0으로 설정 */
+}

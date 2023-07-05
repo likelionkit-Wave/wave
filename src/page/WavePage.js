@@ -79,7 +79,7 @@ const WavePage = ({ List }) => {
               </button>
               {showUrl && (
                 <div className="urlPage">
-                  <div className="url">생성한 URL 주소</div>
+                  <div className="url">z</div>
                   <div className="urlBtn">
                     <CopyToClipboard
                       text="aaa" //url 작성
