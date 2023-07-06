@@ -11,7 +11,7 @@ const MainPage = () => {
             WAVE로 친구에게 안부를 받아보세요.
             <br />
             <br />
-            함께한 추억들이 물결처럼 기억될 것입니다.
+            함께한 추억들은 물결처럼 기억됩니다.
           </h2>
         </div>
         <img className="logoIcon" src="/img/logo.png" alt="로고"></img>
