@@ -8,7 +8,7 @@ const MainPage = () => {
       <div className="mainContainer">
         <div className="header">
           <h2 className="titleMessage">
-            친구에게 안부를 WAVE로 받아보세요.
+            WAVE로 친구에게 안부를 받아보세요.
             <br />
             <br />
             함께한 추억들이 물결처럼 기억될 것입니다.
