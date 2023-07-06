@@ -8,11 +8,11 @@ const MainPage = () => {
       <div className="mainContainer">
         <div className="header">
           <h2 className="titleMessage">
-            문득 떠오른 누군가에게 한 장 편지를...
+            친구에게 안부를 WAVE로 받아보세요.<br/><br/>함께한 추억들이 물결처럼 기억될 것입니다.
           </h2>
         </div>
         <div className="content">
-          <img className="logoIcon" src="" alt="로고"></img>
+          <img className="logoIcon" src="/img/logo.png" alt="로고"></img>
           <div className="buttonGroup">
             <p>다음 계정으로 로그인</p>
             <button className="mainBtn google">
