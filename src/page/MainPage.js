@@ -2,6 +2,10 @@ import React from "react";
 import "../styles/page/MainPage.css";
 
 const MainPage = () => {
+  const handleGoogleLogin = () => {
+    window.location.href = "/api/accounts/google/login";
+  };
+
   return (
     <div className="mainWrapper">
       <div className="mainBg"></div>
@@ -17,7 +21,7 @@ const MainPage = () => {
         <img className="logoIcon" src="/img/logo.png" alt="로고"></img>
         <div className="loginSection">
           <p>다음 계정으로 로그인</p>
-          <button className="mainBtn google">
+          <button className="mainBtn google" onClick={handleGoogleLogin}>
             <img className="socialLogo" src="/img/google.svg"></img>Google로
             로그인
           </button>
@@ -26,8 +30,8 @@ const MainPage = () => {
             카카오 로그인
           </button>
           <p>
-            로그인하면 <a href="">서비스 이용약관</a>과{" "}
-            <a href="">개인정보처리방침</a>에 동의하게 됩니다.
+            로그인하면 <a href="#">서비스 이용약관</a>과{" "}
+            <a href="#">개인정보처리방침</a>에 동의하게 됩니다.
           </p>
         </div>
       </div>

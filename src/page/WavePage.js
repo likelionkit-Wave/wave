@@ -1,12 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/page/WavePage.css";
+import "../styles/page/VisitPage.css";
 import WaveCp from "../components/wave/WaveCp.js";
 import { CopyToClipboard } from "react-copy-to-clipboard/src";
+import Cookies from "js-cookie";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 //(주인이름, url) and List = (보낸이, 편지글, 날짜)
-const WavePage = ({ List }) => {
+const WavePage = () => {
   const [showUrl, setShowUrl] = useState(false);
   const [translateX, setTranslateX] = useState(0);
+  const [list, setList] = useState([]);
+
+  const parms = useParams();
+  console.log(parms);
+
+  useEffect(() => {
+    Cookies.get("user_id")
+      ? axios
+          .get(`/api/message/shorts_list/${Cookies.get("user_id")}`)
+          .then((res) => setList(res.data))
+      : axios
+          .get(`/api/message/shorts_list/${parms.id}`)
+          .then((res) => console.log(res));
+  }, []);
 
   //url 페이지
   const openUrl = () => {
@@ -22,7 +40,7 @@ const WavePage = ({ List }) => {
     alert("클립보드에 복사되었습니다.");
   };
 
-  const pageCount = Math.ceil(List.length / 3); //생성할 페이지 수
+  const pageCount = list.length == 0 ? 1 : Math.ceil(list.length / 3); //생성할 페이지 수
 
   //이동 버튼 동작
   const moveRight = () => {
@@ -45,20 +63,22 @@ const WavePage = ({ List }) => {
       const startIndex = i * 3;
       const endIndex = (i + 1) * 3;
 
-      const pageItems = List.slice(startIndex, endIndex).map((e, index) => (
-        <WaveCp
-          index={startIndex + index}
-          name={e.name}
-          content={e.content}
-          date={e.date}
-          title={e.title}
-        />
-      ));
+      const pageItems = list
+        .slice(startIndex, endIndex)
+        .map((e, index) => (
+          <WaveCp
+            index={startIndex + index}
+            name={e.name}
+            content={e.content}
+            date={e.date}
+            title={e.title}
+          />
+        ));
 
       const page = (
         <div className="Wave">
           <div className="Name">
-            <h4>홍길동</h4>의 바다
+            <h4>{Cookies.get("user_nickname")}</h4>의 바다
           </div>
           <div className="waveImg">
             <img src="/img/dol.png" className="dolImg" alt="돌고래"></img>
@@ -106,7 +126,46 @@ const WavePage = ({ List }) => {
 
   return (
     <div className="WaveContainer" style={{ width: `${100 * pageCount}%` }}>
-      {addPage()}
+      {Cookies.get("user_id") ? (
+        addPage()
+      ) : (
+        <div className="VisitContainer">
+          <div className="visit">
+            <div className="Name">
+              <h3>{parms.name}</h3>의 바다
+            </div>
+            <div className="visitImg">
+              <div className="larusImg">
+                <img src="/img/larus.png" className="Larus" alt="갈매기"></img>
+              </div>
+              <div className="writeBtn">
+                <button
+                  onClick={() => {
+                    window.location.href = "/writewave";
+                  }}
+                >
+                  <img src="/img/letterWrite.png" alt="편지 쓰기 이미지" />
+                  편지 쓰기
+                </button>
+              </div>
+              <div className="message">
+                보내진 편지는 바다 주인만
+                <br />
+                읽을 수 있어요.
+              </div>
+              <div className="makeBtn">
+                <button
+                  onClick={() => {
+                    window.location.href = "/";
+                  }}
+                >
+                  내 우체통도 만들기!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
