@@ -1,8 +1,38 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
 import "../styles/page/MakePage.css";
 
-const MakePage = () => {
-  const [mailbox, setMailbox] = useState("");
+const MakePage = ({ mailbox, setMailbox }) => {
+  const navigate = useNavigate();
+
+  const makeNickname = () => {
+    const data = {
+      data: {
+        nickname: mailbox,
+      },
+      headers: {
+        key: Cookies.get("key"),
+      },
+    };
+    axios
+      .put(
+        "/api/accounts/crud/nickname/",
+        {
+          nickname: mailbox,
+        },
+        {
+          headers: {
+            key: Cookies.get("key"),
+          },
+        }
+      )
+      .then((response) =>
+        Cookies.set("user_nickname", response.data.nickname, { expires: 3 })
+      );
+    navigate(`/wave/${Cookies.get("user_id")}/${mailbox}`);
+  };
 
   return (
     <div className="makeWrapper">
@@ -31,7 +61,9 @@ const MakePage = () => {
               <span className="limitIndicator">{10 - mailbox.length}자</span>
             </p>
           </div>
-          <button className="createBtn">만들기</button>
+          <button className="createBtn" onClick={makeNickname}>
+            만들기
+          </button>
         </div>
       </div>
     </div>
